@@ -1,38 +1,39 @@
 import React, {Component} from 'react';
-import params from './src/params'
-import {
-  Image,
-  StyleSheet,
-  View,
-  Text,
-  Picker
-} from 'react-native';
+import params from './src/params';
+import {Image, StyleSheet, View, Text, Picker} from 'react-native';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-export default class teste extends Component{
+export default class teste extends Component {
   state = {
     language: null,
   };
-render(){
-  return (
+  render() {
+    return (
       <View style={styles.body}>
         <Text style={styles.capa}>Segunda pagina</Text>
         <Picker
           selectedValue={this.state.language}
-          style={{height: 50, width: '22.4%', backgroundColor:'purple', marginLeft:10, maxWidth:'100%'}}
+          style={{
+            height: 50,
+            width: '22.4%',
+            backgroundColor: 'purple',
+            marginLeft: 10,
+            maxWidth: '100%',
+          }}
           onValueChange={(itemValue, itemIndex) =>
             this.setState({language: itemValue})
           }>
           <Picker.Item label="Setembro" value="java" />
           <Picker.Item label="JavaScript" value="js" />
         </Picker>
-        <Image style={{height:200,width:300, marginLeft:10}}source={require('./image/Foto_Patrocinadores.gif')}/>
+        <Image
+          style={{height: 200, width: 300, marginLeft: 10}}
+          source={require('./image/Foto_Patrocinadores.gif')}
+        />
         <Text style={styles.capa}>Voce escolheu: {this.state.language}</Text>
       </View>
-    )
+    );
   }
 }
 const styles = StyleSheet.create({
@@ -46,12 +47,12 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: Colors.white,
   },
-  capa:{
-    color:'red',
-    textAlign:'center',
-    textAlignVertical:'center',
-    fontSize:20,
-    marginTop:'15%'
+  capa: {
+    color: 'red',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    fontSize: 20,
+    marginTop: '15%',
   },
   sectionContainer: {
     marginTop: 32,
@@ -80,5 +81,3 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
 });
-
-
